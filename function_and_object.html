@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>認識函數與物件</title>
+    <script>
+
+    // 定義與使用函數
+
+    // 以下是最簡潔的函數
+    var f = function() {              // 記得存放在一個變數裡，否則無法使用
+      console.log("Function Called");
+    };
+
+    f();
+
+    f = function(x) {                 // 傳入參數版本的 function，之前在 f 變數裡的 function 就被取代了
+      console.log("Input: " + x);
+    };
+
+    f("Argument");  // Function Called
+
+    // 函數通常使用的定義方式
+    function multiply( x, y ){
+      return x * y; 
+    }
+
+    console.log(multiply(5, 6));  // 把 multiply 用 return 回傳的結果輸出到 console
+
+    // 多重函數
+    function addSquare( x, y){
+
+      function square( num ) {
+        return num * num;
+      }
+
+      return square(x) + square(y);
+    }
+
+    console.log(addSquare(10, 6));
+
+    // 使用函數定義和創建物件
+    function createHero( name, hp ,ap ) {
+
+      this.name = name;
+      this.hp = hp;
+      this.ap = ap;
+
+      this.status = function() {
+        return "本英雄名 " + this.name + "，擁有 " + this.hp + "，戰鬥力 " + this.ap;
+      };
+    }
+
+    var hero = new createHero("Bernard",100,50);
+    console.log(hero.status());
+
+    // 使用 class 定義物件
+    class Hero {
+      constructor(name,hp,ap) {
+        this.name = name;
+        this.hp = hp;
+        this.ap = ap; 
+      }
+
+      status() {      // class 寫法的 method 不需要寫關鍵字 funciton
+        return "本英雄名 " + this.name + "，擁有 " + this.hp + "，戰鬥力 " + this.ap;
+      }
+    }
+
+    hero = new Hero("Arch",100,30);
+    console.log(hero.status());
+
+    </script>
+  </head>
+  <body>
+    <h1>   - 請用 Google Chrome 開啟這個檔案。</h1>
+    <h1>   - 請按右鍵，點擊「Inspect」或「檢查」，點選 Console Tab，打開 Console 觀看執行的 JavaScript 程式碼</h1>
+  </body>
+</html>
