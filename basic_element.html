@@ -1,0 +1,121 @@
+<!-- 在網頁加入 JavaScript -->
+
+<html>
+  <head>
+    <!-- head 裡的 JavaScript 程式碼會比 body 先一步執行 -->
+
+    <title>Basic Elements of JavaScript</title>
+
+    <!-- 請在 <script> 裡加入 JavaScript 程式碼 -->
+
+    <script>
+
+    // 這是單行註解（ Comment ），不會加入執行程式碼，只為輔助閱讀
+
+    /*
+      這是多行註解，你可以用多行註解寫較完整的描述
+
+      在這份檔案裡，會介紹註解、變數、數學運算、邏輯判斷等。
+    */
+
+    // 認識 JavaScript Variable
+    
+    var number = 1;        // 有 var：區域變數，為求減少衝突和錯誤，建議變數只用區域變數
+    globalNumber = 100;    // 無 var：全域變數，除非你很清楚自己為何需要，否則請別使用
+    
+    console.log(number);        // 1；console.log 是 Google Chrome Console 提供的功能
+    console.log(globalNumber);  // 100；別忘了每一行程式碼最後都要加上分號「；」
+
+    var stringOne = "This is a string";   // 字串可以使用雙引號包圍
+    var stringTwo = 'This is a string';   // 字串可以使用單引號包圍
+
+    console.log(stringOne);   // This is a string
+    console.log(stringTwo);   // This is a string
+
+    var stringWithSingleQuotation = "This is 'THE' string";    // 如果想在字串內加入單引號，則字串使用雙引號包圍
+
+    var stringWithDoubleQuotation = 'This is "The" string';    // 如果想在字內加入雙引號，則字串使用單引號包圍
+
+    console.log(stringWithSingleQuotation); // This is 'THE' string
+    console.log(stringWithDoubleQuotation); // This is "THE" string
+
+    var boolean = true;   // 布林只有兩個值：true （是）或 false（非）
+    boolean = false;      // 重設原本的布林，記得 true 和 false 是關鍵字
+
+    console.log(boolean); // false
+
+    var integer = 7;            // 這是一個整數的數字
+    var floatingPoint = 4.3;    // 這是一個浮點數的數字
+
+    console.log(integer);       // 7
+    console.log(floatingPoint); // 4.3
+
+    var emptyVariable = null;   // null（空值）不會自動產生，必須自行設定變數為 null
+    var undefinedVariable;      // 如果沒有設定，變數的值就是 undefined（未定義）
+
+    console.log(emptyVariable);     // null
+    console.log(undefinedVariable); // undefined
+
+    // 認識 JavaScript Operator
+
+    var num = 42;     // 這裡的「=」會把 42 放入名稱為 num 的變數裡
+    num += 1;         // 43；num = num + 1，會把 num 裡的 42 拿出來 +1 再放回 num 裡
+    num++;            // 44；num = num + 1，另一種寫法
+    num--;            // 43；num = num - 1
+
+    console.log(num); //43
+
+    var codeName = "Soldier " + 76;   // String Concatenation，串接字串和數字，結果是字串
+    console.log(codeName);            // Soldier 76
+
+    var result;       // 用 result 這個變數來處理接下來的判斷
+    
+    result = 5 == 5;  // 5 是否等於 5
+    console.log("5 == 2 , result: " + result);  // true
+
+    result = 5 > 5;  // 5 是否大於 5
+    console.log("5 > 5 , result: " + result);   // false
+
+    result = 5 >= 5;  // 5 是否大於等於 5
+    console.log("5 >= 5 , result: " + result);  // true
+
+    result = 5 < 5;  // 5 小於 5
+    console.log("5 < 5 , result: " + result);   // false
+
+    result = 5 <= 5;  // 5 是否小於等於 5
+    console.log("5 <= 5 , result: " + result);  // true
+
+    result = ( 5 == 5 ) && ( 2 > 2 );  // 5 是否等於 5，2 小於 2，兩個條件是否同時成立？
+    console.log("( 5 == 5 ) && ( 2 > 2 ) , result: " + result);  // false
+
+    result = ( 5 == 5 ) || ( 2 > 2 );  // 5 是否等於 5，2 小於 2，兩個條件是否其中一個成立？
+    console.log("( 5 == 5 ) || ( 2 > 2 ) , result: " + result);  // true
+
+    // 注意：以下範例有在切換使用單引號和雙引號
+
+    result = 42 === 42;   // 同時比較 42 和 42 的值和種類
+    console.log("42 === 42 , result: " + result);   // true
+
+    result = 42 == "42" ; // 只是比較 42 和 "42" 的值，注意：42 是數字，"42" 是字串
+    console.log('42 == "42" , result: ' + result);  // true
+
+    result = 42 === "42" ; // 同時比較 42 和 "42" 的值和種類
+    console.log('42 === "42" , result: ' + result);  // false
+
+    result = 42 === 42.0 ; // 同時比較 42 和 42.0 的值和種類
+    console.log('42 === 42.0 , result: ' + result);  // false
+
+    </script>
+  </head>
+  <body>
+    <h1>   - 請用 Google Chrome 開啟這個檔案。</h1>
+    <h1>   - 請按右鍵，點擊「Inspect」或「檢查」，點選 Console Tab，打開 Console 觀看執行的 JavaScript 程式碼</h1>
+    <!-- body 裡的 JavaScript 程式碼會比 head 慢一步執行 -->
+    <script>
+    /* 
+      一個 html 檔內可以有多個 <script>
+    */
+    console.log("你可以在一個 html 檔內擁有多個 <script>");
+    </script>
+  </body>
+</html>
