@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>陣列與雜湊</title>
+    <script>
+
+    // 陣列與雜湊
+
+    // 宣告與使用陣列
+
+    var numbers = [1,3,5];
+    var names = ["Arch","Bernard","Ellen"];
+
+    console.log(numbers);
+    console.log(names);
+
+    console.log(numbers[0]);
+    console.log(names[1]);
+
+    numbers.push(2);
+    names.push("Claire");
+
+    console.log(numbers);
+    console.log(names);
+
+    numbers.sort();
+    names.sort();
+
+    console.log(numbers);
+    console.log(names);
+
+    admins = ["Sali","Lilian"];
+    var alphacamp = names.concat(admins);
+
+    console.log(alphacamp);
+
+    numbers.splice(3);
+    console.log("Removed elements after the 3rd element" + numbers);
+
+    numbers = numbers.concat([4,5,6,7,8,9,10]);
+    console.log("Before : " + numbers);
+
+    numbers.splice(3,2);
+    console.log("After Removed : " + numbers);
+
+    // 宣告與使用雜湊
+
+    var data  = new Object();
+    data = {};
+
+    var bernard = { name: "Bernard", job: "Entreprenuer", age: 42 };
+
+    console.log(bernard['name']);
+    console.log(bernard['job']);
+    console.log(bernard['age']);
+
+    var arch = { 
+      name: "Arch", 
+      job: "Developer", 
+      age: 30 
+    };
+
+    console.log(arch.name);
+    console.log(arch.job);
+    console.log(arch.age);
+
+    // 使用迴圈掃描陣列與雜湊
+
+    var nums = [1,3,5,7,9];
+    var i = 0;
+
+    while( i < nums.length ){
+      console.log( nums[ i ] ); // 印出所有內容
+      i++;
+    }
+
+    var nums = [1,3,5,7,9];
+
+    for( i = 0; i < nums.length; i++ ) {
+      console.log( nums[ i ] );
+    }
+
+
+    var data = { name:"Arch", age:"29", job:"Engineer" };
+
+    for ( var content in data ) {
+      console.log(content + " : " + data[content]);
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1>   - 請用 Google Chrome 開啟這個檔案。</h1>
+    <h1>   - 請按右鍵，點擊「Inspect」或「檢查」，點選 Console Tab，打開 Console 觀看執行的 JavaScript 程式碼</h1>
+  </body>
+</html>

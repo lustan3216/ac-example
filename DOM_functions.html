@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>DOM 常用內建語法</title>
+    <script>
+
+    // DOM window 語法
+
+    alert("Warning!");
+
+    var answer = confirm("Are you sure?");
+
+    console.log("The answer is: " + answer);
+
+    function warning() { 
+      console.log("This is a warning message "); 
+    };
+
+    var setting1 = setInterval( warning, 1000);
+
+    clearInterval(setting1);
+
+    function warning(x) { 
+      console.log("This is a warning message " + x); 
+    };
+
+    var setting2 = setInterval( function() { warning(5); }, 5000);
+
+    clearInterval(setting2);
+
+    document.write("Something is here");
+
+    </script>
+  </head>
+  <body>
+    <h1 id="ID">   - Try to access this content</h1>
+    <h1>   - 請用 Google Chrome 開啟這個檔案。</h1>
+    <h1>   - 請按右鍵，點擊「Inspect」或「檢查」，點選 Console Tab，打開 Console 觀看執行的 JavaScript 程式碼</h1>
+    <script>
+      var elem = document.getElementById("ID");
+      elem.innerHTML = "Accessed and changed Content";
+    </script>
+  </body>
+</html>
