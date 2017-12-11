@@ -1,59 +1,62 @@
 <html>
   <head>
-    <title>認識函數與物件</title>
+    <title>U4 認識函數與物件</title>
     <script>
 
-    // 定義與使用函數
+    // 1. 定義與使用函數
 
     // 以下是最簡潔的函數
     var f = function() {              // 記得存放在一個變數裡，否則無法使用
       console.log("Function Called");
     };
 
-    f();
+    f();  // Function Called
 
     f = function(x) {                 // 傳入參數版本的 function，之前在 f 變數裡的 function 就被取代了
       console.log("Input: " + x);
     };
 
-    f("Argument");  // Function Called
+    f("Value");  // Input: Value
 
-    // 函數通常使用的定義方式
-    function multiply( x, y ){
-      return x * y; 
+    // 函數最常使用的定義方式
+    function multiply( x, y ){    // function 後面加上全部小寫的 function name
+      return x * y;               // 在 JavaScript 裡要回傳值就一定要加上 return
     }
 
-    console.log(multiply(5, 6));  // 把 multiply 用 return 回傳的結果輸出到 console
+    console.log("5 乘 6:" + multiply(5, 6));  // 把 multiply 用 return 回傳的結果輸出到 console
 
-    // 多重函數
-    function addSquare( x, y){
+    // 多重函數：函數裡還有函數，並且在函數裡使用內部的函數
+    function addSquare( x, y){  // 傳入兩個數字
 
-      function square( num ) {
+      function square( num ) {  // 內部函數：用來計算出數字的平方
         return num * num;
       }
 
-      return square(x) + square(y);
+      return square(x) + square(y); // 使用兩次內部函數 square 取得 x 和 y 平方，再加起來
     }
 
-    console.log(addSquare(10, 6));
+    console.log("10 的平方 + 6 的平方: ",addSquare(10, 6));  // 136；使用 addSquare 輸入 10 和 6
 
-    // 使用函數定義和創建物件
-    function createHero( name, hp ,ap ) {
+    // 2. 使用函數定義和創建物件
+    function createHero( name, hp ,ap ) {   // 使用 function 創造一個 Hero 物件，記得是 lower camelCase 的寫法
 
-      this.name = name;
-      this.hp = hp;
+      this.name = name;   // this. 表示這是這個物件的屬性
+      this.hp = hp;       // 把外面傳入的 hp 放入物件的 hp 屬性
       this.ap = ap;
 
-      this.status = function() {
+      this.status = function() {    // 屬性也可以放 function 當著物件的方法使用
         return "本英雄名 " + this.name + "，擁有 " + this.hp + "，戰鬥力 " + this.ap;
       };
     }
 
-    var hero = new createHero("Bernard",100,50);
-    console.log(hero.status());
+    var hero = new createHero("Bernard",100,50);   // 創造一個新的物件，記得：創造物件時，前面要加一個 new
+    console.log(hero.status());                    // 使用 console.log 把 status 方法回傳的字串輸出，記得：使用 function 要加 ()  括號，否則使用 status 只會把程式碼當字串印出，而不是執行
 
-    // 使用 class 定義物件
-    class Hero {
+    // 3. 使用 class 定義物件
+
+    // 這種方法很少在 Web 看到，較常出現在後端或其他開發環境，只是讓大家理解也有這種寫法 
+    
+    class Hero {    // 第一個字母要大寫，後面使用 Upper CamelCase
       constructor(name,hp,ap) {
         this.name = name;
         this.hp = hp;
@@ -65,13 +68,19 @@
       }
     }
 
-    hero = new Hero("Arch",100,30);
-    console.log(hero.status());
+    hero = new Hero("Arch",100,30);   // 使用 class 創造物件時，記得：要在前面加一個 new
+    console.log(hero.status());       // 使用物件的方法時，間記得：要在後面加上括號 ()
 
     </script>
   </head>
   <body>
-    <h1>   - 請用 Google Chrome 開啟這個檔案。</h1>
-    <h1>   - 請按右鍵，點擊「Inspect」或「檢查」，點選 Console Tab，打開 Console 觀看執行的 JavaScript 程式碼</h1>
+    <br>
+    <br>
+    <br>
+    <div style="margin:0px auto;padding-left: 40px; border:2px solid #ccc;border-radius: 15px; width:640px">
+      <h2>   - 請用 Google Chrome 開啟這個檔案</h2>
+      <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
+      <h2>   - 請點選 Console 觀看執行的的 JavaScript 程式碼結果</h2>
+    </div>
   </body>
 </html>

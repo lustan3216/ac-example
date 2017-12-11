@@ -1,70 +1,89 @@
 <html>
   <head>
-    <title>陣列與雜湊</title>
+    <title>U5 陣列與雜湊</title>
     <script>
 
-    // 陣列與雜湊
+    // 1. 宣告與使用陣列
 
-    // 宣告與使用陣列
+    var numbers = [1,3,5];                      // 數字（Number）陣列
+    var names = ["Arch","Bernard","Ellen"];     // 字串（String）陣列
 
-    var numbers = [1,3,5];
-    var names = ["Arch","Bernard","Ellen"];
+    console.log("Number array: " + numbers);
+    console.log("String array: " + names);
 
-    console.log(numbers);
-    console.log(names);
+    // 陣列的索引位置從 0 開始  
+    console.log("numbers[0]: " + numbers[0]);
+    console.log("names[1]: " + names[1]);
 
-    console.log(numbers[0]);
-    console.log(names[1]);
+    // push 方法會把新的內容加在陣列的最後方
+    numbers.push(2);        // 在 numbers 末端加上 2
+    console.log("numbers 陣列新增了 2: " + numbers);
 
-    numbers.push(2);
-    names.push("Claire");
+    names.push("Claire");   // 在 names 末端加上 Claire
+    console.log('names 陣列新增了 "Claire": ' + names);
 
-    console.log(numbers);
-    console.log(names);
+    // sort 方法會把陣列進行排序
+    numbers.sort();     // 根據數字排序
+    names.sort();       // 根據英文字母排序
 
-    numbers.sort();
-    names.sort();
+    // 請自行實驗與觀察如果字串有數字會怎麼排序  
 
-    console.log(numbers);
-    console.log(names);
+    console.log("排序過的 numbers: " + numbers);
+    console.log("排序過的 names: " + names);
 
-    admins = ["Sali","Lilian"];
+
+    // 新增 admins 陣列  
+    admins = ["Sali","Lilian","Youchi"];
+
+    // 把 names 和 admins 合併，放入 alphacamp 陣列
     var alphacamp = names.concat(admins);
 
-    console.log(alphacamp);
+    console.log("合併了 names 和 admins 的 alphacamp: " + alphacamp);
 
     numbers.splice(3);
-    console.log("Removed elements after the 3rd element" + numbers);
+    console.log("移除了第四個元素開始（包含）的所有元素: " + numbers);
 
-    numbers = numbers.concat([4,5,6,7,8,9,10]);
-    console.log("Before : " + numbers);
+    numbers = numbers.concat([4,5,6,7,8,9,10]); // 為了展示 splice 的功能，新增了一連串連續的數字
+    
+    console.log("移除陣列第四個元素開始（包含）後的兩個元素");
+    console.log("移除陣列元素前 : " + numbers);
+    numbers.splice(3,2);    // 移除的第四個元素開始的兩個元素，故會移除掉 4 和 5
+    console.log("移除陣列元素後 : " + numbers);
 
-    numbers.splice(3,2);
-    console.log("After Removed : " + numbers);
+    // 2. 宣告與使用雜湊
 
-    // 宣告與使用雜湊
+    var data  = new Object();   // 空的物件 = 空的雜湊
+    data = {};                  // 空的物件 = 空的雜湊；慣例寫法，網路上比較推崇這個寫法
 
-    var data  = new Object();
-    data = {};
+    data['name'] = "Arch";      // 宣告新的 key 和 value；data 的屬性就是 key，輸入的值就是 value 
+    data.age = 30;              // 宣告新的 key 和 value；另一種寫法，看起來更像物件
 
-    var bernard = { name: "Bernard", job: "Entreprenuer", age: 42 };
+    console.log("data.name : " + data.name);    // 調換寫法，一樣可以取得值
+    console.log("data['age']: " + data['age']);
 
-    console.log(bernard['name']);
-    console.log(bernard['job']);
-    console.log(bernard['age']);
+    var bernard = { name: "Bernard", job: "Entreprenuer", age: 42 };        // 雜湊的宣告方式
 
-    var arch = { 
+    console.log("bernard 的內容: ");
+    console.log("bernard['name']: " + bernard['name']);
+    console.log("bernard['job']: " + bernard['job']);
+    console.log("bernard['age': " + bernard['age']);
+
+    // 這是雜湊的宣告方式的慣例寫法，通常會在掛號後換行，然後中間寫上 key 和 value，然後最後加上括號和分號
+    var arch = {    
       name: "Arch", 
       job: "Developer", 
       age: 30 
     };
 
-    console.log(arch.name);
-    console.log(arch.job);
-    console.log(arch.age);
+    console.log("arch 的內容: ");
+    console.log("arch.name: " + arch.name);
+    console.log("arch.job: " + arch.job);
+    console.log("arch.age: " + arch.age);
 
-    // 使用迴圈掃描陣列與雜湊
+    // 3. 使用迴圈掃描陣列與雜湊
 
+
+    console.log("使用 while 迴圈列印出所有 nums 的元素: ");
     var nums = [1,3,5,7,9];
     var i = 0;
 
@@ -73,13 +92,14 @@
       i++;
     }
 
+    console.log("使用 for 迴圈列印出所有 nums 的元素: ");
     var nums = [1,3,5,7,9];
 
     for( i = 0; i < nums.length; i++ ) {
       console.log( nums[ i ] );
     }
 
-
+    console.log("使用 for in 迴圈列印出所有 data 的元素: ");
     var data = { name:"Arch", age:"29", job:"Engineer" };
 
     for ( var content in data ) {
@@ -89,7 +109,13 @@
     </script>
   </head>
   <body>
-    <h1>   - 請用 Google Chrome 開啟這個檔案。</h1>
-    <h1>   - 請按右鍵，點擊「Inspect」或「檢查」，點選 Console Tab，打開 Console 觀看執行的 JavaScript 程式碼</h1>
+    <br>
+    <br>
+    <br>
+    <div style="margin:0px auto;padding-left: 40px; border:2px solid #ccc;border-radius: 15px; width:640px">
+      <h2>   - 請用 Google Chrome 開啟這個檔案</h2>
+      <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
+      <h2>   - 請點選 Console 觀看執行的的 JavaScript 程式碼結果</h2>
+    </div>
   </body>
 </html>

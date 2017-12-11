@@ -1,34 +1,34 @@
 <html>
   <head>
-    <title>認識迴圈與流程控制</title>
+    <title>U3 認識迴圈與流程控制</title>
     <script>
 
-    // 認識 JavaScript 的流程控制
+    // 1. 認識 JavaScript 的流程控制
 
-    var number = 2;         // 請自行切換數字進行練習與實驗
+    var number = 2;         // ！重要！注意！請自行切換數字觀察結果
 
     // 本範例只有提供等於和數字的比較判斷式，請自行修改變數與判斷內容作為練習
 
-    // 只有 if    
+    // 只有單獨一個 if 的判斷式   
     if( number == 5 ) {            // number == 5 結果為 true 時才會執行
       console.log("X is 5");
     }
 
-    // 只有 if he else
+    // if 和 else 的二分法判斷式：A 或非 A
     if( number == 5 ) {            // number == 5 結果為 true 時才會執行
       console.log("number is 5");
     } else {                       // number == 5 結果為 false 時才會執行
       console.log("number is not 5");
     }
 
-    // 只有 if 和 else if
+    // if／else if 的二分法判斷式：A 或 B
     if( number == 5 ) {            // number == 5 結果為 true 時才會執行
       console.log("number is 5");
     } else if( number == 4) {      // number == 4 結果為 true 時才會執行
       console.log("number is 4");
     }
 
-    // 有 if／else if／else
+    // if／else if／else 的三分法判斷式：A 或 B 或「非A非B」
     if( number == 5 ) {            // number == 5 結果為 true 時才會執行
       console.log("number is 5");
     } else if( number == 4) {      // number == 4 結果為 true 時才會執行
@@ -37,7 +37,7 @@
       console.log("number is not 4 nor 5")
     }
 
-    // if 和 else 之間有多個 else if
+    // 多個選項參雜其中的判斷式
     if( number == 5 ) {
       console.log("number is 5");
     } else if( number == 4) {
@@ -52,11 +52,13 @@
       console.log("number is not 1 to 5");
     }
 
-    // 將上面的 if else 程式碼轉換成 switch 的寫法
-    switch(number) {
-      case 5: 
+    console.log("以下是 switch case 的程式碼：");
+
+    // 將上面的程式碼轉換成 switch 的寫法，這個方法只適用於「一個變數」
+    switch(number) {    // switch 裡帶入變數
+      case 5:           // 如果 case 後面的數字等同於 number 內的數字，裡面的程式碼才會被執行
         console.log("number is 5 "); 
-        break;
+        break;          // break 會退出 switch，如果沒有退出，會一直往下判斷 case 4
       case 4: 
         console.log("number is 4 "); 
         break;
@@ -69,13 +71,15 @@
       case 1: 
         console.log("number is 1 "); 
         break;
-      default: 
+      default:  // default 是預設，如果沒有任何一個 case 成立就會執行，其效果和 else 一樣，用來判斷不屬於以上所有可能性的數字
         console.log("number is not 1 to 5");
     }
 
-    // 使用迴圈重複執行程式
+    // 2. 使用迴圈重複執行程式
 
-    var times = 1;          // times 預設時 1
+    console.log("以下是迴圈的程式碼：");
+
+    var times = 1;          // times 預設是 1
 
     while( times < 5 ) {    // 當 times 小於 5 時執行，小於 5 即 4
       console.log(times);   // 1,2,3,4
@@ -94,7 +98,13 @@
     </script>
   </head>
   <body>
-    <h1>   - 請用 Google Chrome 開啟這個檔案。</h1>
-    <h1>   - 請按右鍵，點擊「Inspect」或「檢查」，點選 Console Tab，打開 Console 觀看執行的 JavaScript 程式碼</h1>
+    <br>
+    <br>
+    <br>
+    <div style="margin:0px auto;padding-left: 40px; border:2px solid #ccc;border-radius: 15px; width:640px">
+      <h2>   - 請用 Google Chrome 開啟這個檔案</h2>
+      <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
+      <h2>   - 請點選 Console 觀看執行的的 JavaScript 程式碼結果</h2>
+    </div>
   </body>
 </html>
