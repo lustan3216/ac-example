@@ -1,43 +1,98 @@
 <html>
   <head>
-    <title>DOM 常用內建語法</title>
+    <title>U1 DOM 內建常用語法</title>
+    <style>
+      .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;         
+        padding: 15px 32px;
+        text-align: center;          
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      .button1 {background-color: #4CAF50;} /* Green */
+      .button2 {background-color: #008CBA;} /* Blue */
+      .button3 {background-color: #f44336;} /* Red */ 
+      .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+      .button5 {background-color: #555555;} /* Black */
+
+      .box{
+        margin:0px auto;
+        padding-left: 40px; 
+        border:2px solid #ccc;
+        border-radius: 15px; 
+        width:640px;
+      }
+    </style>
     <script>
 
-    // DOM window 語法
+    // 1. 使用 DOM window 方法
 
-    alert("Warning!");
+    // 使用 window 方法不需要指定任何物件， <script> 所在位置就是 window 本體
+    
+    function alertTest() {
+      alert("這是測試用的警告訊息！請點擊 OK！");    // 上方會跳出一個警告訊息
+    }
 
-    var answer = confirm("Are you sure?");
+    function confirmTest(){
+      var answer = confirm("確定要進入網頁？");    // 上方會跳出一個確認訊息，選擇「確定」會回傳 true，選擇「取消」會回傳 false
+      alert("你剛才的選擇為： " + answer );
+    }
 
-    console.log("The answer is: " + answer);
+    function locationTest(){
+      answer = confirm("是否要轉入 Google？");    // 上方會跳出一個確認訊息，選擇「確定」會回傳 true，選擇「取消」會回傳 false
 
-    function warning() { 
-      console.log("This is a warning message "); 
+      if(answer) {    // 如果答案為 true，會跳轉到 google 去
+        location = "http://www.google.com";
+      }
+    }
+
+    var i = 0;        // 用來展示重複訊息的次數
+    
+    function message() { // 下面會使用 setInterval 重複執行 message
+      console.log("這個訊息會每三秒重複一次，這是第" + i + "次");
+      i++;  //每次使用完後， X 會遞增 1
     };
 
-    var setting1 = setInterval( warning, 1000);
+    function toggle(){    // 根據 setting
+      if( setting == null ){
+        startInterval();
+      } else {
+        endInterval();
+      }
+    }
 
-    clearInterval(setting1);
+    var setting = null;     // 用來開關與儲存特定 Interval 的變數
 
-    function warning(x) { 
-      console.log("This is a warning message " + x); 
-    };
+    function startInterval(){
+      // 記得把 setInterval 的結果存到 setting 裡，這樣之後才能取消
+      setting = setInterval(message, 1000); // setInterval 會每秒執行 1 次 message()，這裡的 1000 是以毫米為單位，所以 1000 = 1 秒
+    }
 
-    var setting2 = setInterval( function() { warning(5); }, 5000);
+    function endInterval(){       
+      clearInterval(setting);     // clearInterval 會取消掉每秒執行 message 的操作
+      setting = null;             // 取消後把 setting 改成 null，之後可以在 toggle() 判斷開始或取消
+    }
 
-    clearInterval(setting2);
-
-    document.write("Something is here");
+    var j = 0;
 
     </script>
   </head>
   <body>
-    <h1 id="ID">   - Try to access this content</h1>
-    <h1>   - 請用 Google Chrome 開啟這個檔案。</h1>
-    <h1>   - 請按右鍵，點擊「Inspect」或「檢查」，點選 Console Tab，打開 Console 觀看執行的 JavaScript 程式碼</h1>
-    <script>
-      var elem = document.getElementById("ID");
-      elem.innerHTML = "Accessed and changed Content";
-    </script>
+    <div style="margin:0px auto;padding-left: 40px; width:720px">
+      <button class="button" onclick="alertTest()">發出警告訊息</button>
+      <button class="button button2" onclick="confirmTest()">發出確認訊息</button>
+      <button class="button button3" onclick="locationTest()">跳轉入 Google</button>
+      <button class="button button4" onclick="toggle()">重複執行開關</button>
+    </div>
+    <div class="box">
+      <h2>   - 請用 Google Chrome 開啟這個檔案</h2>
+      <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
+      <h2>   - 請點選 Console 觀看執行的的 JavaScript 程式碼結果</h2>
+    </div>
   </body>
 </html>

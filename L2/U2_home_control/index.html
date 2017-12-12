@@ -1,16 +1,52 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<script type="text/javascript" src="js/script.js"></script>
-	<title>P1 Home Control</title>
-</head>
-<body>
-<img id="image" src="img/bedroom.png">
-<br>
-<div>
-	Timer: <span id="timer">10</span>
-</div>
-<input type="button" onclick="changeSrc();" value="Click Me">
-</body>
+  <head>
+    <style>
+      .button {
+        position:relative;
+        font-size: x-large;
+        background-color: #4CAF50; /* Green */
+        border: none;
+        border-radius:2px;
+        color: white;
+        padding: 20px 36px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
 
+      div.table {border: 1px solid black; display: table; }
+      div.tr {border: 1px solid black; display: table-row; }
+      div.td {border: 1px solid black; display: table-cell; }
+    </style>
+  	<script>
+    var timeLeft = 5;
+    setting = setInterval(countDownTimer, 1000);
+    
+    var images = ["img/on.jpg","img/off.jpg"];
+
+    var currentPos = 0;
+
+    function toggleLight() {
+        if (++currentPos >= images.length) currentPos = 0;
+                image.src = images[currentPos];
+    }
+
+    function countDownTimer() {
+      timeLeft = timeLeft - 1;
+      if (timeLeft <= 0) {
+            toggleLight();
+            clearInterval(setting);
+      }
+      document.getElementById("timer").innerHTML = timeLeft;
+    } 
+    </script>
+  	<title>U2 實作：居家控制</title>
+  </head>
+  <body>
+    <div style="margin:0px auto;padding-left: 40px; border:2px solid #ccc;border-radius: 15px; width:640px">
+    <img id="image" src="img/on.jpg" width="600" height="400">
+    Timer: <span id="timer">10 </span>
+    <button class="button"  onclick="toggleLight();">開關按鈕</button>
+  </body>
 </html>
