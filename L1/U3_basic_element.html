@@ -11,7 +11,7 @@
       在這份檔案裡，會介紹註解、變數、數學運算、邏輯判斷等。
     */
 
-    // 1) 認識 JavaScript Variable
+    // 1. 認識 JavaScript Variable
     
     var number = 1;        // 宣告變數，別忘了每一行程式碼最後都要加上分號「；」
     
@@ -62,6 +62,12 @@
 
     num = num + 1;    // num 加 1（ 42 加 1 ），再放入 num
     console.log("num = num + 1 , 結果: " + num); // 42
+
+    num = num % 3;    // num 除 3 的餘數（ 43 除 3 沒有辦法整除的餘數 ），放入 num
+    console.log("num = num % 3 , 結果: " + num); // 1
+
+    // 重新設定 num 數值為 42
+    num = 42;
 
     num += 1;         // num = num + 1，另一種寫法，這種寫法也可以把 1 換成其他數字
     console.log("num += 1 , 結果: " + num); // 43
@@ -124,12 +130,5 @@
       <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
       <h2>   - 請點選 Console 觀看執行的的 JavaScript 程式碼結果</h2>
     </div>
-    <!-- body 裡的 JavaScript 程式碼會比 head 慢一步執行 -->
-    <script>
-    /* 
-      一個 html 檔內可以有多個 <script>
-    */
-    console.log("你可以在一個 html 檔內擁有多個 <script>");
-    </script>
   </body>
 </html>
