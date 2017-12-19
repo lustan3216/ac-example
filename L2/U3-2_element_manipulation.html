@@ -1,18 +1,18 @@
 <html>
   <head>
-    <title>U3 處理網頁互動</title>
+    <title>U3 處理與新增 HTML 內容</title>
     <!-- CSS 風格並不包含在教學裡 -->
     <style>
       .button {
         background-color: #4CAF50; /* Green */
         border: none;
         color: white;         
-        padding: 15px 32px;
+        padding: 20px 32px;
         text-align: center;          
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
+        font-size: 20px;
+        margin: 13px 2px 10px 30px;
         cursor: pointer;
       }
       .button1 {background-color: #4CAF50;} /* Green */
@@ -30,22 +30,16 @@
       }
     </style>
     <script>
-    // 2. 使用 DOM document 方法
 
-    // 修改已有的 element 內的 html 內容
-    function editText(){
-      var elem = document.getElementById("content");      // 使用 Id 名稱將該 element 提出來
-      elem.innerHTML = "這是一個修改過 " + j + " 次的文字";  // 透過 element 屬性修改其內容
-      j++;
-    }
+    // 2. 使用 DOM document 方法
 
     // 在 container 裡新增 element，新增的內容是「一篇廢文」
     function addText(){
       var container = document.getElementById("container");  // 透過 id 獲得 container
 
-      var newElem = document.createElement("div");  // 首先使用 document 的 createElement 方法創建一個 div element
-      newElem.innerHTML = "一篇廢文";       // 設定其內容為「一篇廢文」
-      container.appendChild(newElem);     // 把這個加入 container 內資料的最末端
+      var div = document.createElement("div");  // 首先使用 document 的 createElement 方法創建一個 div element
+      div.innerHTML = "一篇廢文";       // 設定其內容為「一篇廢文」
+      container.appendChild(div);     // 把這個加入 container 內資料的最末端
     }
 
     // 刪除 container 裡最後一個 childNode
@@ -64,7 +58,7 @@
       var container = document.getElementById("container"); // 透過 id 獲得 container
       var newContainer = document.createElement("div");     // 創建新的 div container 
       newContainer.innerHTML = "取代原本的 div container!";  // 設定好新的 container 的內容
-      newContainer.className = "box";                      // 設定 class，因此擁有之前設定的 css style
+      newContainer.className = container.className;                      // 設定 class，因此擁有之前設定的 css style
       newContainer.id = container.id;                     // 獲得 id 名稱 
       container.parentNode.replaceChild(newContainer,container);  // 透過原本的 container，使用 container 的 parentNode，用 newContainer 取代 container
     }
@@ -72,16 +66,14 @@
     </script>
   </head>
   <body>
-    <div style="margin:0px auto;padding-left: 40px; width:720px">=
+    <div style="margin:0px auto;padding-left: 40px; width:720px">
       <button class="button button" onclick="addText()">新增一篇廢文</button>
       <button class="button button2" onclick="delText()">刪除一篇廢文</button>
-      <button class="button button3" onclick="editText()">修改文字內容</button>
-      <button class="button button4" onclick="replaceDiv()">取代整個DIV</button>
+      <button class="button button3" onclick="replaceDiv()">取代整個DIV</button>
     </div>
-    <div id="container" class="box"></div>
-    <div id="content" class="box">
-      這是一個尚未修改過的文字
-    </div>
+    <br>
+    <div id="container" class="box">  </div>
+    <br>
     <div class="box">
       <h2>   - 請用 Google Chrome 開啟這個檔案</h2>
       <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>

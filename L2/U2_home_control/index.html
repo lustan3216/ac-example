@@ -39,35 +39,43 @@
       }
       </style>
   	<script>
-    var timeLeft = 5;
-    setting = setInterval(countDownTimer, 1000);
-    
-    var images = ["img/on.jpg","img/off.jpg"];
 
-    var currentPos = 0;
+    var state = "on";
 
     function toggleLight() {
-        if (++currentPos >= images.length) currentPos = 0;
-                image.src = images[currentPos];
+      var img = document.getElementById('image');
+      if ( state == "on" ) {
+        state = "off";
+        image.src = "img/off.jpg";
+      } else {
+        state = "on";
+        image.src = "img/on.jpg";
+      }
     }
+
+    var timeLeft = 5;
 
     function countDownTimer() {
       timeLeft = timeLeft - 1;
       if (timeLeft <= 0) {
-            toggleLight();
+            image.src = "img/off.jpg";
             clearInterval(setting);
       }
       document.getElementById("timer").innerHTML = timeLeft;
     } 
+
+    var setting = setInterval(countDownTimer, 1000);
+
     </script>
   	<title>U2 實作：居家控制</title>
   </head>
   <body>
-    
     <table style="margin:0px auto;padding: 10px;border:2px solid;border-color:#1E90FF">
       <tbody>
       <tr>
-      <td rowspan="2"><img id="image" src="img/on.jpg" width="400" height="300"></td>
+      <td rowspan="2">
+        <img id="image" src="img/on.jpg" width="400" height="300">
+      </td>
       <td><div class="div" id="timer">5</div></td>
       </tr>
       <tr>
