@@ -31,7 +31,7 @@
 
     var stringWithSingleQuotation = "This is 'THE' string";    // 如果想在字串內加入單引號，則字串使用雙引號包圍
 
-    var stringWithDoubleQuotation = 'This is "The" string';    // 如果想在字內加入雙引號，則字串使用單引號包圍
+    var stringWithDoubleQuotation = 'This is "THE" string';    // 如果想在字內加入雙引號，則字串使用單引號包圍
 
     console.log("字串裡用單引號: " + stringWithSingleQuotation); // This is 'THE' string
     console.log("字串裡用雙引號: " + stringWithDoubleQuotation); // This is "THE" string
@@ -50,6 +50,7 @@
     // Part 2. 認識 Arithmetic Operator
 
     var num = 42;     // 這裡的「=」會把 42 放入名稱為 num 的變數裡
+    console.log("設定 num 為： " + num); // 84
 
     num = num * 2;    // num 乘 2（ 42 乘 2 ），再放入 num
     console.log("num = num * 2 , 結果: " + num); // 84
@@ -68,6 +69,7 @@
 
     // 重新設定 num 數值為 42
     num = 42;
+    console.log("重新設定 num 為： " + num); // 84
 
     num += 1;         // num = num + 1，另一種寫法，這種寫法也可以把 1 換成其他數字
     console.log("num += 1 , 結果: " + num); // 43
@@ -83,7 +85,7 @@
     console.log(greetings + friend);  // String Concatenation，串接兩個字串
 
     var codeName = "Soldier " + 76;   // String Concatenation，串接字串和數字，結果是字串
-    console.log('"Soldier" + 76:' + codeName);            // Soldier 76
+    console.log('"Soldier" + 76: ' + codeName);            // Soldier 76
 
     // Part 3. 認識 Comparison Operator
     var result;       // 用 result 這個變數來處理接下來的判斷
@@ -129,10 +131,10 @@
     <div style="margin:0px auto;padding-left: 40px; border:2px solid #ccc;border-radius: 15px; width:640px">
       <h2> - 請用 Google Chrome 開啟這個檔案</h2>
       <h2> - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
-      <h2> - 請點選 Console Tab 觀看執行的的 JavaScript 程式碼結果</h2>
+      <h2> - 請點選 Console 觀看執行的的 JavaScript 結果</h2>
       <h2> - 或使用快捷鍵開啟 Console：</h2>
-      <h2> -- macOS：Cmd + Option + j</h2>
-      <h2> -- Windows／Ubuntu：Ctrl + Shift + j</h2>
+      <h2> &ensp;&ensp; - macOS：Cmd + Option + j</h2>
+      <h2> &ensp;&ensp; - Windows／Ubuntu：Ctrl + Shift + j</h2>
     </div>
   </body>
 </html>
