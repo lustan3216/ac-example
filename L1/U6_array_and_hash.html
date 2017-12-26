@@ -1,9 +1,9 @@
 <html>
   <head>
-    <title>U5 陣列與雜湊</title>
+    <title>U6 陣列與雜湊</title>
     <script>
 
-    // 1. 宣告與使用陣列
+    // Part 1. 宣告與使用陣列
 
     var numbers = [1,3,5];                      // 數字（Number）陣列
     var names = ["Arch","Bernard","Ellen"];     // 字串（String）陣列
@@ -16,10 +16,10 @@
     console.log("names[1]: " + names[1]);
 
     // push 方法會把新的內容加在陣列的最後方
-    numbers.push(2);        // 在 numbers 末端加上 2
+    numbers.push(2);        // 在 numbers 陣列的末端加上 2
     console.log("numbers 陣列新增了 2: " + numbers);
 
-    names.push("Claire");   // 在 names 末端加上 Claire
+    names.push("Claire");   // 在 names 陣列的末端加上 Claire
     console.log('names 陣列新增了 "Claire": ' + names);
 
     // sort 方法會把陣列進行排序
@@ -33,7 +33,7 @@
 
 
     // 新增 admins 陣列  
-    admins = ["Sali","Lilian","Youchi"];
+    admins = ["Sali","Lilian"];
 
     // 把 names 和 admins 合併，放入 alphacamp 陣列
     var alphacamp = names.concat(admins);
@@ -43,14 +43,14 @@
     numbers.splice(3);
     console.log("移除了第四個元素開始（包含）的所有元素: " + numbers);
 
-    numbers = numbers.concat([4,5,6,7,8,9,10]); // 為了展示 splice 的功能，新增了一連串連續的數字
+    numbers = numbers.concat([4,5,6,7,8,9,10]); // 為了展示 splice 的功能，新增一連串連續的數字
     
     console.log("移除陣列第四個元素開始（包含）後的兩個元素");
     console.log("移除陣列元素前 : " + numbers);
     numbers.splice(3,2);    // 移除的第四個元素開始的兩個元素，故會移除掉 4 和 5
     console.log("移除陣列元素後 : " + numbers);
 
-    // 2. 宣告與使用雜湊
+    // Part 2. 宣告與使用雜湊
 
     var data  = new Object();   // 空的物件 = 空的雜湊
     data = {};                  // 空的物件 = 空的雜湊；慣例寫法，網路上比較推崇這個寫法
@@ -61,27 +61,29 @@
     console.log("data.name : " + data.name);    // 調換寫法，一樣可以取得值
     console.log("data['age']: " + data['age']);
 
-    var bernard = { name: "Bernard", job: "Entreprenuer", age: 42 };        // 雜湊的宣告方式
+    var bernard = { name: "Bernard", job: "Entreprenuer", age: 42 };        // 宣告有資料的雜湊
 
+    // 使用中括號取得雜湊內容
     console.log("bernard 的內容: ");
     console.log("bernard['name']: " + bernard['name']);
     console.log("bernard['job']: " + bernard['job']);
     console.log("bernard['age': " + bernard['age']);
 
-    // 這是雜湊的宣告方式的慣例寫法，通常會在掛號後換行，然後中間寫上 key 和 value，然後最後加上括號和分號
+    // 這是雜湊的宣告方式的慣例寫法，通常會在大括號後換行，然後中間寫上 key 和 value，用逗號和換行隔開每一筆資料，然後最後加上括號和分號
     var arch = {    
       name: "Arch", 
       job: "Developer", 
       age: 30 
     };
 
+
+    // 使用「.」取得雜湊內容，如物件取用屬性一樣
     console.log("arch 的內容: ");
     console.log("arch.name: " + arch.name);
     console.log("arch.job: " + arch.job);
     console.log("arch.age: " + arch.age);
 
-    // 3. 使用迴圈掃描陣列與雜湊
-
+    // Part 3. 使用迴圈掃描陣列與雜湊
 
     console.log("使用 while 迴圈列印出所有 nums 的元素: ");
     var nums = [1,3,5,7,9];
@@ -99,11 +101,20 @@
       console.log( nums[ i ] );
     }
 
+    console.log("使用 forEach 迴圈列印出所有 nums 的元素: ");
+    nums = [1,2,3,4];
+
+    // forEach 會把每個變數帶入一個 function 處理，其中 value 和 index 必須是在固定的資料位置
+    nums.forEach( function(value,index) {
+      console.log("這是第 " + index + " 個內容： " + value); 
+    });
+
     console.log("使用 for in 迴圈列印出所有 data 的元素: ");
     var data = { name:"Arch", age:"29", job:"Engineer" };
 
-    for ( var content in data ) {
-      console.log(content + " : " + data[content]);
+    // 必須先從雜湊裡拿出 key，再使用 key 去取得雜湊裡對應的內容
+    for ( var key in data ) {
+      console.log(key + " : " + data[key]);
     }
 
     </script>

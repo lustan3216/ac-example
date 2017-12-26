@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>U5 新增與修改 CSS 內容</title>
+    <!-- CSS 風格並不包含在教學裡 -->
+    <style>
+      .button {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        color: white;
+        text-align: center;     
+        font-size: 20px;
+      }
+
+      .button1 {background-color: #4CAF50;} /* Green */
+      .button2 {background-color: #008CBA;} /* Blue */
+      .button3 {background-color: #f44336;} /* Red */ 
+
+      .box{
+        margin:0px auto;
+        padding-left: 40px; 
+        border:2px solid #ccc;
+        border-radius: 15px; 
+        width:640px;
+      }
+
+      .loader {
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+
+    <script>
+
+      function applyStyle() {
+        var element = document.getElementById("changeColor");
+        element.style.color = "tomato";
+        element.style.fontWeight = "bold";
+        element.style.background = "white";
+      }
+
+      function applyClass() {
+        var element = document.getElementById("spinButton");
+        element.classList.add("loader");
+      }
+
+      function removeClass() {
+        var element = document.getElementById("spinButton");
+        element.classList.remove("loader");
+      }
+ 
+    </script>
+  </head>
+  <body>
+    <div style="margin:0px auto; width:400px">
+      <button id="changeColor" class="button button1" onclick="applyStyle()">變色</button>
+      <button id="spinButton" class="button button2" onclick="applyClass()">轉動</button>
+      <button id="stopButton" class="button button3" onclick="removeClass()">停止</button>
+    </div>
+    <br>
+    <div id="container" class="box">  </div>
+    <br>
+    <div class="box">
+      <h2>   - 請用 Google Chrome 開啟這個檔案</h2>
+      <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
+      <h2>   - 請點選 Console 觀看執行的的 JavaScript 程式碼結果</h2>
+    </div>
+  </body>
+</html>

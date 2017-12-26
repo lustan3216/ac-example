@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>U2 認識 JavaScript 語法基本元素</title>
+    <title>U3 認識 JavaScript 基本元素</title>
     <script>
 
     // 這是單行註解（ Comment ），不會加入執行程式碼，只為輔助閱讀
@@ -11,11 +11,17 @@
       在這份檔案裡，會介紹註解、變數、數學運算、邏輯判斷等。
     */
 
-    // 1. 認識 JavaScript Variable
+    // Part 1. 認識 JavaScript Variable
     
-    var number = 1;        // 宣告變數，別忘了每一行程式碼最後都要加上分號「；」
+    var number = 1;        // 宣告變數記得要加 var，別忘了每一行程式碼最後都要加上分號「；」
     
-    console.log("使用 console.log 印出的訊息: " + number);        // 1；console.log 是 Google Chrome Console 提供的功能
+    console.log("用 number 印出的數字: " + number);        // 會印出 number 的數字：1
+
+    var integer = 7;            // 這是一個整數的數字
+    var floatingPoint = 4.3;    // 這是一個浮點數的數字
+
+    console.log("Integer: " + integer);       // 7
+    console.log("Floating Point: " + floatingPoint); // 4.3
 
     var stringOne = "This is a string";   // 字串可以使用雙引號包圍
     var stringTwo = 'This is a string';   // 字串可以使用單引號包圍
@@ -35,19 +41,13 @@
 
     console.log("boolean: " + boolean); // false
 
-    var integer = 7;            // 這是一個整數的數字
-    var floatingPoint = 4.3;    // 這是一個浮點數的數字
-
-    console.log("Integer: " + integer);       // 7
-    console.log("Floating Point: " + floatingPoint); // 4.3
-
-    var emptyVariable = null;   // null（空值）不會自動產生，必須自行設定變數為 null
     var undefinedVariable;      // 如果沒有設定，變數的值就是 undefined（未定義）
+    var nullVariable = null;   // null（空值）不會自動產生，必須自行設定變數為 null
 
-    console.log("空值: " + emptyVariable);     // null
-    console.log("未定義: " + undefinedVariable); // undefined
+    console.log("這是未定義的變數: " + undefinedVariable); // undefined
+    console.log("這個變數內容為空值: " + nullVariable);    // null
 
-    // 2. 認識 JavaScript Operator
+    // Part 2. 認識 Arithmetic Operator
 
     var num = 42;     // 這裡的「=」會把 42 放入名稱為 num 的變數裡
 
@@ -78,10 +78,14 @@
     num--;            // num = num - 1 
     console.log("num-- , 結果: " + num); // 43
 
+    var friend = "Bernard";
+    var greetings = "Hello! ";
+    console.log(greetings + friend);  // String Concatenation，串接兩個字串
 
     var codeName = "Soldier " + 76;   // String Concatenation，串接字串和數字，結果是字串
     console.log('"Soldier" + 76:' + codeName);            // Soldier 76
 
+    // Part 3. 認識 Comparison Operator
     var result;       // 用 result 這個變數來處理接下來的判斷
     
     result = 5 == 5;  // 5 是否等於 5
@@ -116,9 +120,6 @@
     result = 42 === "42" ; // 同時比較 42 和 "42" 的值和種類
     console.log('42 === "42" , 結果: ' + result);  // false
 
-    result = 42 === 42.0 ; // 同時比較 42 和 42.0 的值和種類
-    console.log('42 === 42.0 , 結果: ' + result);  // false
-
     </script>
   </head>
   <body>
@@ -126,9 +127,12 @@
     <br>
     <br>
     <div style="margin:0px auto;padding-left: 40px; border:2px solid #ccc;border-radius: 15px; width:640px">
-      <h2>   - 請用 Google Chrome 開啟這個檔案</h2>
-      <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
-      <h2>   - 請點選 Console 觀看執行的的 JavaScript 程式碼結果</h2>
+      <h2> - 請用 Google Chrome 開啟這個檔案</h2>
+      <h2> - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
+      <h2> - 請點選 Console Tab 觀看執行的的 JavaScript 程式碼結果</h2>
+      <h2> - 或使用快捷鍵開啟 Console：</h2>
+      <h2> -- macOS：Cmd + Option + j</h2>
+      <h2> -- Windows／Ubuntu：Ctrl + Shift + j</h2>
     </div>
   </body>
 </html>

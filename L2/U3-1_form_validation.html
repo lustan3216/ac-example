@@ -67,8 +67,8 @@
         }
       }
 
-      var msg = document.getElementById('success');
-      msg.innerText = "歡迎來自" + city + "的" + name.value + "君";
+      var msg = document.getElementById("result");
+      msg.innerHTML = "歡迎來自" + city + "的" + name.value + "君";
     }
 
     </script>
@@ -85,18 +85,22 @@
             <td><input type="text" id="code" ></td>
           </tr>
 
-        <tr><td></td><td><input type="button" onclick="validate()" value="Validate"/>
+        <tr><td></td><td>
+         <input type="button" onclick="validate()" value="Validate"/>
 
         <!---
               <button type="button" onclick="validate()">Validate</button>
         -->
         </td></tr>
-        <p id = "success"></p>
+        <p id = "result"></p>
         </table>
       </form>
     </div>
     <h2> - 請用 Google Chrome 開啟這個檔案</h2>
     <h2> - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
     <h2> - 請點選 Console Tab 觀看執行的的 JavaScript 程式碼結果</h2>
+    <h2> - 或使用快捷鍵開啟 Console：</h2>
+    <h2> -- macOS：Cmd + Option + j</h2>
+    <h2> -- Windows／Ubuntu：Ctrl + Shift + j</h2>
   </body>
 </html>

@@ -59,24 +59,17 @@
       i++;  //每次使用完後， X 會遞增 1
     };
 
-    function toggle(){    // 根據 setting
-      if( setting == null ){
-        startInterval();
-      } else {
-        endInterval();
-      }
-    }
 
     var setting = null;     // 用來開關與儲存特定 Interval 的變數
 
-    function startInterval(){
-      // 記得把 setInterval 的結果存到 setting 裡，這樣之後才能取消
-      setting = setInterval(message, 1000); // setInterval 會每秒執行 1 次 message()，這裡的 1000 是以毫米為單位，所以 1000 = 1 秒
-    }
-
-    function endInterval(){       
-      clearInterval(setting);     // clearInterval 會取消掉每秒執行 message 的操作
-      setting = null;             // 取消後把 setting 改成 null，之後可以在 toggle() 判斷開始或取消
+    function toggle(){    // 根據 setting
+      if( setting == null ){
+        // 記得把 setInterval 的結果存到 setting 裡，這樣之後才能取消
+        setting = setInterval(message, 1000); // setInterval 會每秒執行 1 次 message()，這裡的 1000 是以毫米為單位，所以 1000 = 1 秒
+      } else {
+        clearInterval(setting);     // clearInterval 會取消掉每秒執行 message 的操作
+        setting = null;             // 取消後把 setting 改成 null，之後可以在 toggle() 判斷開始或取消
+      }
     }
 
     var j = 0;
