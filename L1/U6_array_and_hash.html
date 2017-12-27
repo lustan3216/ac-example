@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>U6 陣列與雜湊</title>
+    <title>U6 陣列與關聯式陣列</title>
     <script>
 
     // Part 1. 宣告與使用陣列
@@ -50,38 +50,17 @@
     numbers.splice(3,2);    // 移除的第四個內容開始的兩個內容，故會移除掉 4 和 5
     console.log("移除第四個內容和第五個內容後 : " + numbers);
 
-    // Part 2. 宣告與使用雜湊
+    // Part 2. 宣告與使用雜湊（Map）
 
-    var data  = new Object();   // 空的物件 = 空的雜湊
-    data = {};                  // 空的物件 = 空的雜湊；慣例寫法，網路上比較推崇這個寫法
+    var map  = new Map();       // 宣告一個新的 Map 物件
 
-    data['name'] = "Arch";      // 宣告新的 key 和 value；data 的屬性就是 key，輸入的值就是 value 
-    data.age = 30;              // 宣告新的 key 和 value；另一種寫法，看起來更像物件
+    map.set("name","Arch");    // 使用 set 方法把 key 和 value 加入 Map
+    var name = map.get("name"); // 使用 get 方法，透過 key 把 value 拿出來
+    console.log("這是從 map 裡拿出來的 name： " + name);
 
-    console.log("data.name : " + data.name);    // 調換寫法，一樣可以取得值
-    console.log("data['age']: " + data['age']);
+    map.delete("name"); // 使用 delete 方法把對應到這個 key 的 value 從 map 移除
 
-    var bernard = { name: "Bernard", job: "Entreprenuer", age: 42 };        // 宣告有資料的雜湊
-
-    // 使用中括號取得雜湊內容
-    console.log("bernard 的內容: ");
-    console.log("bernard['name']: " + bernard['name']);
-    console.log("bernard['job']: " + bernard['job']);
-    console.log("bernard['age': " + bernard['age']);
-
-    // 這是雜湊的宣告方式的慣例寫法，通常會在大括號後換行，然後中間寫上 key 和 value，用逗號和換行隔開每一筆資料，然後最後加上括號和分號
-    var arch = {    
-      name: "Arch", 
-      job: "Developer", 
-      age: 30 
-    };
-
-
-    // 使用「.」取得雜湊內容，如物件取用屬性一樣
-    console.log("arch 的內容: ");
-    console.log("arch.name: " + arch.name);
-    console.log("arch.job: " + arch.job);
-    console.log("arch.age: " + arch.age);
+    console.log("這是 map 裡 key 和 value 的數量： " + map.size);
 
     // Part 3. 使用迴圈掃描陣列與雜湊
 
@@ -107,13 +86,21 @@
       console.log("這是第 " + index + " 個內容： " + value); 
     });
 
-    console.log("使用 for in 迴圈列印出所有 data 的內容: ");
-    var data = { name:"Arch", age:"29", job:"Engineer" };
+    console.log("使用 forEach 迴圈列印出所有 data Map 的內容: ");
+    
+    // 宣告一個新的 Map 物件 
+    var data = new Map();
 
-    // 必須先從雜湊裡拿出 key，再使用 key 去取得雜湊裡對應的內容
-    for ( var key in data ) {
-      console.log(key + " : " + data[key]);
-    }
+    // 依序把 key 和 value 的資料放入 Map 物件裡
+    data.set("name","Arch");
+    data.set("age",29);
+    data.set("job","Engineer");
+
+
+    // 使用 forEach 對所有 data 裡的資料進行一次處理， foreach 裡必須帶入一個 function，function 傳入的第一個資料會是 value，而第二個資料會是 key
+    data.forEach( function(value,key) {
+        console.log("Key " + key + " 的 value 是: " + value);
+    });
 
     </script>
   </head>
