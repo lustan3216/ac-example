@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>U6 陣列與關聯式陣列</title>
+    <title>U6 認識 JavaScript 的資料結構</title>
     <script>
 
     // Part 1. 宣告與使用陣列
@@ -49,6 +49,10 @@
     console.log("移除陣列內容前 : " + numbers);
     numbers.splice(3,2);    // 移除的第四個內容開始的兩個內容，故會移除掉 4 和 5
     console.log("移除第四個內容和第五個內容後 : " + numbers);
+
+    numbers.splice(3,0,4,5);    // 把移除的 4 和 5 加從位置 3 中接回去
+
+    console.log("在第三個內容的位置重新加入 4 和 5: " + numbers);
 
     // Part 2. 宣告與使用雜湊（Map）
 
@@ -115,6 +119,7 @@
       <h2> - 或使用快捷鍵開啟 Console：</h2>
       <h2> &ensp;&ensp; - macOS：Cmd + Option + j</h2>
       <h2> &ensp;&ensp; - Windows／Ubuntu：Ctrl + Shift + j</h2>
+      <h3>* 某些電腦因設定不同，快捷鍵也會不同 *</h3>
     </div>
   </body>
 </html>

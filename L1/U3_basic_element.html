@@ -7,8 +7,7 @@
 
     /*
       這是多行註解，你可以用多行註解寫較完整的描述
-
-      在這份檔案裡，會介紹註解、變數、數學運算、邏輯判斷等。
+      在這份檔案裡，會介紹註解、變數、數學運算、比較、邏輯等。
     */
 
     // Part 1. 認識 JavaScript Variable
@@ -27,7 +26,7 @@
     var stringTwo = 'This is a string';   // 字串可以使用單引號包圍
 
     console.log("用雙引號的印出的字串: " + stringOne);   // This is a string
-    console.log("用單引號的印出的字串: " + stringTwo);   // This is a string
+    console.log('用單引號的印出的字串: ' + stringTwo);   // This is a string
 
     var stringWithSingleQuotation = "This is 'THE' string";    // 如果想在字串內加入單引號，則字串使用雙引號包圍
 
@@ -87,6 +86,10 @@
     var codeName = "Soldier " + 76;   // String Concatenation，串接字串和數字，結果是字串
     console.log('"Soldier" + 76: ' + codeName);            // Soldier 76
 
+    var boolean = true;     // 設定變數為 true 的布林值
+    boolean = !boolean;     // 用「!」把 true 變成 false
+    console.log('"Soldier" + 76: ' + codeName);
+
     // Part 3. 認識 Comparison Operator
     var result;       // 用 result 這個變數來處理接下來的判斷
     
@@ -105,12 +108,6 @@
     result = 5 <= 5;  // 5 是否小於等於 5
     console.log("5 <= 5 , 結果: " + result);  // true
 
-    result = ( 5 == 5 ) && ( 2 > 2 );  // 5 是否等於 5，2 小於 2，兩個條件是否同時成立？
-    console.log("( 5 == 5 ) && ( 2 > 2 ) , 結果: " + result);  // false
-
-    result = ( 5 == 5 ) || ( 2 > 2 );  // 5 是否等於 5，2 小於 2，兩個條件是否其中一個成立？
-    console.log("( 5 == 5 ) || ( 2 > 2 ) , 結果: " + result);  // true
-
     // 注意：以下範例有在切換使用單引號和雙引號
 
     result = 42 === 42;   // 同時比較 42 和 42 的值和種類
@@ -121,6 +118,23 @@
 
     result = 42 === "42" ; // 同時比較 42 和 "42" 的值和種類
     console.log('42 === "42" , 結果: ' + result);  // false
+
+    // Part 4. 認識 Logical Operator
+
+    // 使用 NOT 符號進行反向判斷  
+    var answer = false;
+    if ( !answer ) {    // 答案是 false，才會執行
+        console.log("反向判斷，答案是： " + answer);
+    }
+
+    answer = !false; // 反轉答案
+
+
+    result = ( 5 == 5 ) && ( 2 > 2 );  // 5 是否等於 5，2 小於 2，兩個條件是否同時成立？
+    console.log("( 5 == 5 ) && ( 2 > 2 ) , 結果: " + result);  // false
+
+    result = ( 5 == 5 ) || ( 2 > 2 );  // 5 是否等於 5，2 小於 2，兩個條件是否其中一個成立？
+    console.log("( 5 == 5 ) || ( 2 > 2 ) , 結果: " + result);  // true
 
     </script>
   </head>
@@ -135,6 +149,7 @@
       <h2> - 或使用快捷鍵開啟 Console：</h2>
       <h2> &ensp;&ensp; - macOS：Cmd + Option + j</h2>
       <h2> &ensp;&ensp; - Windows／Ubuntu：Ctrl + Shift + j</h2>
+      <h3>* 某些電腦因設定不同，快捷鍵也會不同 *</h3>
     </div>
   </body>
 </html>

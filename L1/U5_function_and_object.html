@@ -30,12 +30,10 @@
     console.log("5 乘 6: " + multiply(5, 6));  // 用 return 把 multiply 的結果回傳，然後輸出到 console
 
     // 多重函數：函數裡還有函數，並且在函數裡使用內部的函數
-    function addSquare(x, y){   // 一般 function name 是 lowerCamelCase 寫法
-
-      function square( num ) {  // 內部函數：用來計算出數字的平方
+    function addSquare(x,y){   // 一般 function name 是 lowerCamelCase 寫法
+      function square(num) {  // 內部函數：用來計算出數字的平方
         return num * num;
       }
-
       return square(x) + square(y); // 使用兩次內部函數 square 取得 x 和 y 平方，再加起來
     }
 
@@ -101,6 +99,7 @@
       <h2> - 或使用快捷鍵開啟 Console：</h2>
       <h2> &ensp;&ensp; - macOS：Cmd + Option + j</h2>
       <h2> &ensp;&ensp; - Windows／Ubuntu：Ctrl + Shift + j</h2>
+      <h3>* 某些電腦因設定不同，快捷鍵也會不同 *</h3>
     </div>
   </body>
 </html>
