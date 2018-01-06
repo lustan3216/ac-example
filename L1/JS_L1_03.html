@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>U3 認識 JavaScript 基本元素</title>
+    <title>認識 JavaScript 基本元素</title>
     <script>
 
     // 這是單行註解（ Comment ），不會加入執行程式碼，只為輔助閱讀
@@ -10,7 +10,7 @@
       在這份檔案裡，會介紹註解、變數、數學運算、比較、邏輯等。
     */
 
-    // Part 1. 認識 JavaScript Variable
+    // Part 1. Variable
     
     var number = 1;        // 宣告變數記得要加 var，別忘了每一行程式碼最後都要加上分號「；」
     
@@ -46,7 +46,7 @@
     console.log("這是未定義的變數: " + undefinedVariable); // undefined
     console.log("這個變數內容為空值: " + nullVariable);    // null
 
-    // Part 2. 認識 Arithmetic Operator
+    // Part 2. Arithmetic Operators
 
     var num = 42;     // 這裡的「=」會把 42 放入名稱為 num 的變數裡
     console.log("設定 num 為： " + num); // 84
@@ -90,7 +90,7 @@
     boolean = !boolean;     // 用「!」把 true 變成 false
     console.log('"Soldier" + 76: ' + codeName);
 
-    // Part 3. 認識 Comparison Operator
+    // Part 3. Comparison Operators
     var result;       // 用 result 這個變數來處理接下來的判斷
     
     result = 5 == 5;  // 5 是否等於 5
@@ -119,22 +119,24 @@
     result = 42 === "42" ; // 同時比較 42 和 "42" 的值和種類
     console.log('42 === "42" , 結果: ' + result);  // false
 
-    // Part 4. 認識 Logical Operator
+    // Part 4. Logical Operators
 
     // 使用 NOT 符號進行反向判斷  
     var answer = false;
-    if ( !answer ) {    // 答案是 false，才會執行
+    if ( !answer ) {    // answer 是 false 才會執行
         console.log("反向判斷，答案是： " + answer);
     }
 
-    answer = !false; // 反轉答案
+    answer = !false; // 反轉布林，true 變 false、false 變 true
+    console.log(answer);
 
 
-    result = ( 5 == 5 ) && ( 2 > 2 );  // 5 是否等於 5，2 小於 2，兩個條件是否同時成立？
-    console.log("( 5 == 5 ) && ( 2 > 2 ) , 結果: " + result);  // false
+    result = (5 == 5) && (2 > 2);  // 5 是否等於 5，2 小於 2，兩個條件是否同時成立？
+    
+    console.log("(5 == 5) && (2 > 2) , 結果: " + result);  // false
 
-    result = ( 5 == 5 ) || ( 2 > 2 );  // 5 是否等於 5，2 小於 2，兩個條件是否其中一個成立？
-    console.log("( 5 == 5 ) || ( 2 > 2 ) , 結果: " + result);  // true
+    result = (5 == 5) || (2 > 2);  // 5 是否等於 5，2 小於 2，兩個條件是否其中一個成立？
+    console.log("(5 == 5) || (2 > 2) , 結果: " + result);  // true
 
     </script>
   </head>

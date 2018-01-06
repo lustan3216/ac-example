@@ -1,26 +1,8 @@
 <html>
   <head>
-    <title>U3 處理與修改 HTML 內容</title>
+    <title>操作 HTML 元素 - (1) Add, Delete, Replace</title>
     <!-- CSS 風格並不包含在教學裡 -->
     <style>
-      .button {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;         
-        padding: 20px 32px;
-        text-align: center;          
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 13px 2px 10px 30px;
-        cursor: pointer;
-      }
-      .button1 {background-color: #4CAF50;} /* Green */
-      .button2 {background-color: #008CBA;} /* Blue */
-      .button3 {background-color: #f44336;} /* Red */ 
-      .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
-      .button5 {background-color: #555555;} /* Black */
-
       .box{
         margin:0px auto;
         padding-left: 40px; 
@@ -30,8 +12,6 @@
       }
     </style>
     <script>
-
-    // 2. 使用 DOM document 方法
 
     // 在 container 裡新增 element，新增的內容是「一篇廢文」
     function addText(){
@@ -54,7 +34,6 @@
 
     // 把 container 用一個新創建的 container 取代，將新 container 的 css style 和 id 設定得和舊的一樣
     function replaceDiv(){
-
       var container = document.getElementById("container"); // 透過 id 獲得 container
       var newContainer = document.createElement("div");     // 創建新的 div container 
       newContainer.innerHTML = "取代原本的 div container!";  // 設定好新的 container 的內容
@@ -62,7 +41,6 @@
       newContainer.id = container.id;                     // 獲得 id 名稱 
       container.parentNode.replaceChild(newContainer,container);  // 透過原本的 container，使用 container 的 parentNode，用 newContainer 取代 container
     }
-
     </script>
   </head>
   <body>
@@ -72,12 +50,6 @@
       <button class="button button3" onclick="replaceDiv()">取代整個DIV</button>
     </div>
     <br>
-    <div id="container" class="box">  </div>
-    <br>
-    <div class="box">
-      <h2>   - 請用 Google Chrome 開啟這個檔案</h2>
-      <h2>   - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
-      <h2>   - 請點選 Console 觀看執行的的 JavaScript 程式碼結果</h2>
-    </div>
+    <div id="container" class="box"></div>
   </body>
 </html>

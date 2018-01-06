@@ -1,9 +1,9 @@
 <html>
   <head>
-    <title>U5 深入淺出函式與物件</title>
+    <title>JavaScript 的多重範型：函式與物件</title>
     <script>
 
-    // Part 1. 定義與使用函數
+    // Part 1. 定義與使用函式
 
     // 以下是最精簡的 function
     var f = function() {              // 記得存放在一個變數裡，否則無法使用
@@ -22,24 +22,24 @@
 
     f("Value");  // Input: Value
 
-    // 函數最常使用的定義方式
+    // 函式最常使用的定義方式
     function multiply( x, y ){    // function 後面加上全部小寫的 function name
       return x * y;               // 在 JavaScript 裡要回傳值就一定要加上 return
     }
 
     console.log("5 乘 6: " + multiply(5, 6));  // 用 return 把 multiply 的結果回傳，然後輸出到 console
 
-    // 多重函數：函數裡還有函數，並且在函數裡使用內部的函數
+    // 多重函式：函式裡有函式，並且在函式裡使用內部的函式
     function addSquare(x,y){   // 一般 function name 是 lowerCamelCase 寫法
-      function square(num) {  // 內部函數：用來計算出數字的平方
+      function square(num) {  // 內部函式：用來計算出數字的平方
         return num * num;
       }
-      return square(x) + square(y); // 使用兩次內部函數 square 取得 x 和 y 平方，再加起來
+      return square(x) + square(y); // 使用兩次內部函式 square 取得 x 和 y 平方，再加起來
     }
 
     console.log("10 的平方 + 6 的平方: ",addSquare(10, 6));  // 136；使用 addSquare 輸入 10 和 6
 
-    // Part 2. 使用函數定義和創建物件
+    // Part 2. 使用函式定義和創建物件
 
     function CreateHero( name, hp ,ap ) {   // 使用 function 創造一個 Hero 物件，創造物件記得是 UpperCamelCase 的寫法
 
@@ -48,7 +48,7 @@
       this.ap = ap;       // this.ap = ap 表示把外面傳入的資料 ap 放入這個物件的屬性 ap 裡
 
       this.status = function() {    // 屬性也可以放 function 當著物件的方法使用
-        return "本英雄名 " + this.name + "，擁有 " + this.hp + "，戰鬥力 " + this.ap;
+        console.log("本英雄名 " + this.name + "，擁有 " + this.hp + "，戰鬥力 " + this.ap);
       };
     }
 
@@ -67,7 +67,7 @@
       }
 
       status() {      // class 寫法的 method 不需要寫關鍵字 funciton
-        return "本英雄名 " + this.name + "，擁有 " + this.hp + "，戰鬥力 " + this.ap;
+        console.log("本英雄名 " + this.name + "，擁有 " + this.hp + "，戰鬥力 " + this.ap);
       }
     }
 

@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>使用迴圈</title>
+    <script>
+
+    // Part 1. while
+
+    console.log("以下是 while 迴圈的程式碼：");
+
+    var times = 1;          // times 預設是 1
+
+    while(times < 5) {    // 當 times 小於 5 時執行，小於 5 即 4
+      console.log(times);   // 1,2,3,4
+      times++;              // 每次遞增 1
+    }
+
+    console.log("以下是 do while 迴圈的程式碼：");
+
+    do {                    // 至少會執行一次
+      console.log(times);   // 4
+      times++;              // 每次遞增 1
+    } while(times < 5)    // 當 times 小於 5 時執行，小於 5 即 4
+
+    console.log("使用 while 迴圈列印出所有 nums 的內容: ");
+
+    var nums = [1,3,5,7,9];
+    var i = 0;
+    while(i < nums.length){
+      console.log(nums[i]); // 印出所有內容
+      i++;
+    }
+
+
+    // Part 2. for
+
+    console.log("以下是 for 迴圈的程式碼：");
+
+    for(var i = 0; i < 5; i++) {  // i 初始為 0，當 i 小於 5 時執行，每次 i 遞增 1
+      console.log(i);               //0,1,2,3,4
+    }
+
+    console.log("使用 for 迴圈列印出所有 nums 的內容: ");
+
+    for(var i = 0; i < nums.length; i++) {
+      console.log(nums[i]); // 印出所有內容
+      i++;
+    }
+
+    // Part 3. forEach
+
+    console.log("使用 forEach 迴圈列印出所有 nums 的內容: ");
+    // forEach 會把每個變數帶入一個 function 處理，其中 value 和 index 必須是在固定的資料位置
+    nums.forEach( function(value,index) {
+      console.log("這是第 " + index + " 個內容： " + value); 
+    });
+
+    console.log("使用 forEach 迴圈列印出所有 data Map 的內容: ");
+    
+    // 宣告一個新的 Map 物件 
+    var data = new Map();
+
+    // 依序把 key 和 value 的資料放入 Map 物件裡
+    data.set("name","Arch");
+    data.set("age",29);
+    data.set("job","Engineer");
+
+    // 使用 forEach 對所有 data 裡的資料進行一次處理， foreach 裡必須帶入一個 function，function 傳入的第一個資料會是 value，而第二個資料會是 key
+    data.forEach( function(value,key) {
+        console.log("Key " + key + " 的 value 是: " + value);
+    });
+
+    </script>
+  </head>
+  <body>
+    <br>
+    <br>
+    <br>
+    <div style="margin:0px auto;padding-left: 40px; border:2px solid #ccc;border-radius: 15px; width:640px">
+      <h2> - 請用 Google Chrome 開啟這個檔案</h2>
+      <h2> - 請按下滑鼠右鍵，點擊「Inspect」或「檢查」</h2>
+      <h2> - 請點選 Console 觀看執行的的 JavaScript 結果</h2>
+      <h2> - 或使用快捷鍵開啟 Console：</h2>
+      <h2> &ensp;&ensp; - macOS：Cmd + Option + j</h2>
+      <h2> &ensp;&ensp; - Windows／Ubuntu：Ctrl + Shift + j</h2>
+      <h3>* 某些電腦因設定不同，快捷鍵也會不同 *</h3>
+    </div>
+  </body>
+</html>

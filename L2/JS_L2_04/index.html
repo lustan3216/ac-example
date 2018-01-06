@@ -1,6 +1,7 @@
 <html>
   <head>
-    <title>U2 居家控制</title>
+    <title>事件驅動 - (2) 實作：電燈開關</title>
+    <!-- CSS 風格並不包含在教學裡 -->
     <style>
       .button {
         margin-left: 10px;
@@ -38,20 +39,26 @@
         border-width: 7px;
       }
       </style>
-<script type="text/javascript" src="index.js"></script>
-  	<title>U2 實作：居家控制</title>
+    <!--- 從外部載入 js 檔 -->
+    <script type="text/javascript" src="js/index.js"></script>
   </head>
   <body>
     <table style="margin:0px auto;padding: 10px;border:2px solid;border-color:#1E90FF">
       <tbody>
       <tr>
       <td rowspan="2">
+        <!--- 照片 -->
         <img id="image" src="img/on.jpg" width="400" height="300">
       </td>
-      <td><div class="div" id="timer">5</div></td>
+      <td>
+        <!--- 倒數計時器 -->
+        <div class="div" id="timer">5</div>
+      </td>
       </tr>
       <tr>
-      <td><button class="button" onclick="toggleLight();">ON<br>-<br>OFF</button></td>
+      <td>
+        <!--- 開關燈按鈕 -->
+        <button class="button" onclick="toggleLight();">ON<br>-<br>OFF</button></td>
       </tr>
       </tbody>
     </table>

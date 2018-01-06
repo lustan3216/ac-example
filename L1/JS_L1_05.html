@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>U4 認識迴圈與流程控制</title>
+    <title>使用流程控制</title>
     <script>
 
     // Part 1. 使用 if／else if／else 進行流程控制
@@ -12,43 +12,43 @@
     // 在 if / else if / else 流程控制小括號裡條件成立下，大括號的程式才會被執行
  
     // 使用 if 判斷是否執行程式碼  
-    if( number == 5 ) {            
+    if(number == 5) {            
       console.log("X is 5");        // number == 5 結果為 true 時才會執行
     }
 
     // if 和 else 的二分法判斷式：A 或非 A
-    if( number == 5 ) {            
+    if(number == 5) {            
       console.log("number is 5");     // number == 5 結果為 true 時才會執行
     } else {                       
       console.log("number is not 5"); // number == 5 結果為 false 時才會執行
     }
 
     // if／else if 的判斷兩種情況：A 或 B
-    if( number == 5 ) {            
+    if(number == 5) {            
       console.log("number is 5");   // number == 5 結果為 true 時才會執行
-    } else if( number == 4) {      
+    } else if(number == 4) {      
       console.log("number is 4");   // number == 4 結果為 true 時才會執行
     }
 
     // if／else if／else 的三分法判斷式：A 或 B 或「非A非B」
-    if( number == 5 ) {            
+    if(number == 5) {             
       console.log("number is 5");   // number == 5 結果為 true 時才會執行
-    } else if( number == 4) {      
+    } else if(number == 4) {      
       console.log("number is 4");   // number == 4 結果為 true 時才會執行
     } else {                       
       console.log("number is not 4 nor 5"); // 結果皆為 false 時才會執行
     }
 
     // 多個 else if 參雜其中的邏輯判斷式
-    if( number == 5 ) {
+    if(number == 5) {  
       console.log("number is 5");
-    } else if( number == 4) {
+    } else if(number == 4) {
       console.log("number is 4");
-    } else if( number == 3) {
+    } else if(number == 3) {
       console.log("number is 3");
-    } else if( number == 2) {
+    } else if(number == 2) {
       console.log("number is 2");
-    } else if( number == 1) {
+    } else if(number == 1) {
       console.log("number is 1");
     } else {
       console.log("number is not 1 to 5");
@@ -81,31 +81,8 @@
 
     // Part 3. 使用「？」進行流程控制
     var x = 3;
-    x > 2 ? console.log("使用「?」: 大於 2") : console.log("使用「?」: 不大於 2"); 
-
-    // Part 4. 使用迴圈重複執行程式
-
-    console.log("以下是 while 迴圈的程式碼：");
-
-    var times = 1;          // times 預設是 1
-
-    while( times < 5 ) {    // 當 times 小於 5 時執行，小於 5 即 4
-      console.log(times);   // 1,2,3,4
-      times++;              // 每次遞增 1
-    }
-
-    console.log("以下是 do while 迴圈的程式碼：");
-
-    do {                    // 至少會執行一次
-      console.log(times);   // 4
-      times++;              // 每次遞增 1
-    } while( times < 5 )    // 當 times 小於 5 時執行，小於 5 即 4
-
-    console.log("以下是 for 迴圈的程式碼：");
-
-    for( var i = 0; i < 5; i++ ) {  // i 初始為 0，當 i 小於 5 時執行，每次 i 遞增 1
-      console.log(i);               //0,1,2,3,4
-    }
+    // ？ 左邊是判斷式，右邊是執行結果；接著「：」左邊是 true 要執行的結果，右邊是 false 要執行的結果
+    x > 2 ? console.log("Yes") : console.log("No"); 
 
     </script>
   </head>
