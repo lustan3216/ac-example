@@ -1,4 +1,4 @@
-# S18-JavaScript Sample Code
+# S18 JavaScript 範例程式碼
 
 L1 ： 認識 JavaScript
 * JS_L1_02.html - 套用並檢視 JavaScript
