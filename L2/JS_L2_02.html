@@ -13,17 +13,6 @@
       <!-- 以下是用來示範 querySelector 的 HTML  -->
       <p>This is a box for querySelector</p>
     </div>
-
-    <div style="margin:0px auto;padding-left: 40px; width:720px">
-      <!-- 以下這個按鈕會發出一個警告訊息在上方 -->
-      <button class="button" onclick="alertTest()">發出警告訊息</button>
-      <!-- 以下這個按鈕會發出一個確認訊息在上方，點擊後會發出一個訊息結果 -->
-      <button class="button button2" onclick="confirmTest()">發出確認訊息</button>
-      <!-- 以下這個按鈕會發出一個確認是否轉入 Google 的訊息在上方，點擊確認會轉入 Google，點擊取消則什麼也不會發生 -->
-      <button class="button button3" onclick="locationTest()">跳轉入 Google</button>
-      <!-- 以下這個按鈕會切換重複執行程式的開和關 -->
-      <button class="button button4" onclick="toggle()">重複執行開關</button>
-    </div>
     <!-- 因為在 <head> 會先載入，但那時 <body> 還沒載入，方法如 getElementById 無法取得在 HTML 的標籤-->
     <script>
 
