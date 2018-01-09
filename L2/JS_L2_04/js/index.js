@@ -1,13 +1,14 @@
+"use strict";
 var state = "on";
 
     function toggleLight() {
       var img = document.getElementById('image');
       if ( state == "on" ) {
         state = "off";
-        image.src = "img/off.jpg";
+        img.src = "img/off.jpg";
       } else {
         state = "on";
-        image.src = "img/on.jpg";
+        img.src = "img/on.jpg";
       }
     }
 

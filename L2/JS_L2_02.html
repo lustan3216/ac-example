@@ -15,7 +15,7 @@
     </div>
     <!-- 因為在 <head> 會先載入，但那時 <body> 還沒載入，方法如 getElementById 無法取得在 HTML 的標籤-->
     <script>
-
+    "use strict";
     // Part 1. document 常用屬性與方法
 
     var box = document.getElementById("item"); // 使用 getElementId 取得預設好 id 的 HTML 標籤的物件；若有兩個相同 id，會取最近的第一個（由上往下找）
