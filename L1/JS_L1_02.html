@@ -10,15 +10,16 @@
       <script>
         "use strict";
         // console.log 會在 Google Chrome 的 Console Tab 印出訊息
-        console.log("使用 console.log 印出的訊息");
-
+        console.log("1. 使用 console.log 印出的訊息");
+        console.log("由於 head 會比 body 早載入，所以在這裡要拿出 body 的資料會引發錯誤");
       </script>
     <body>
 
     <!-- body 裡的 JavaScript 程式碼會比 head 慢一步執行 -->
     <script>
       //  一個 html 檔內可以有多個 <script>
-      console.log("你可以在一個 html 檔內擁有多個 <script>");
+      console.log("2. 你可以在一個 html 檔內擁有多個 <script>");
+      console.log("如果要拿出的 HTML 標籤內容在下方，因為還沒載入的關係，所以一樣會發生錯誤");
     </script>
     <div style="margin:0px auto;padding-left: 40px; border:2px solid #ccc;border-radius: 15px; width:640px">
       <h2> - 請用 Google Chrome 開啟這個檔案</h2>
@@ -29,5 +30,9 @@
       <h2> &ensp;&ensp; - Windows／Ubuntu：Ctrl + Shift + j</h2>
       <h3>* 某些電腦因設定不同，快捷鍵也會不同 *</h3>
     </div>
+    <script>
+      console.log("3. 這個訊息最後才被印出");
+      console.log("在 body 標籤結束的位置，就可以正常拿出在 body 裡的內容");
+    </script>
   </body>
 </html>
