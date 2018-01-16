@@ -79,12 +79,11 @@
       constructor(name,hp,ap,mp){     // 使用繼承的方法設定屬性 
         super(name,hp,ap);            // 使用 super 讓 Mage 使用 Hero 的 constructor 去初始化物件
         this.mp = mp;
+        super.status();  // 使用關鍵字 super 搭配 方法名稱來使用 Hero 的 status 方法
       }
     }
 
     var mage = new Mage("Bernard",100,30,10);   // 使用繼承的方法設定屬性
-    console.log(mage.status());       // 使用繼承的方法
-    console.log(mage.name);           // 使用繼承的屬性
 
     </script>
   </head>
